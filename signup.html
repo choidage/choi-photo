@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&p 사람과사진 - 회원가입</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">P&p 사람과사진</a>
+        <div class="menu-toggle">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">홈</a></li>
+            <li><a href="about.html">동아리 소개</a></li>
+            <li><a href="gallery.html">갤러리</a></li>
+            <li><a href="contact.html">문의하기</a></li>
+            <li><a href="signup.html" class="btn-signup active">회원가입</a></li>
+            <li><button class="theme-toggle">☀️</button></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>함께 시선을 나누다</h1>
+        <p>P&p 사진동아리 신규 회원 가입 양식입니다.</p>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form id="signupForm">
+                <!-- 1. 이름 -->
+                <div class="form-group">
+                    <label for="name">이름 <span class="required">*</span></label>
+                    <input type="text" id="name" class="form-control" placeholder="홍길동" required>
+                </div>
+
+                <!-- 2. 성별 -->
+                <div class="form-group">
+                    <label>성별 <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="male" required> 남
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="gender" value="female"> 여
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. 생년월일 -->
+                <div class="form-group">
+                    <label for="birthdate">생년월일 <span class="required">*</span></label>
+                    <input type="date" id="birthdate" class="form-control" required>
+                </div>
+
+                <!-- 4. 거주지 (17개 시도) -->
+                <div class="form-group">
+                    <label for="location">거주지 <span class="required">*</span></label>
+                    <select id="location" class="form-control" required>
+                        <option value="" disabled selected>선택해주세요</option>
+                        <option value="서울">서울특별시</option>
+                        <option value="부산">부산광역시</option>
+                        <option value="대구">대구광역시</option>
+                        <option value="인천">인천광역시</option>
+                        <option value="광주">광주광역시</option>
+                        <option value="대전">대전광역시</option>
+                        <option value="울산">울산광역시</option>
+                        <option value="세종">세종특별자치시</option>
+                        <option value="경기">경기도</option>
+                        <option value="강원">강원도</option>
+                        <option value="충북">충청북도</option>
+                        <option value="충남">충청남도</option>
+                        <option value="전북">전라북도</option>
+                        <option value="전남">전라남도</option>
+                        <option value="경북">경상북도</option>
+                        <option value="경남">경상남도</option>
+                        <option value="제주">제주특별자치도</option>
+                    </select>
+                </div>
+
+                <!-- 5. 카메라 유무 -->
+                <div class="form-group">
+                    <label>카메라 유무 <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="hasCamera" value="yes" required> 있음
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="hasCamera" value="no"> 없음
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 6. 주 촬영스타일 (10개) -->
+                <div class="form-group">
+                    <label for="style">주 촬영스타일 <span class="required">*</span></label>
+                    <select id="style" class="form-control" required>
+                        <option value="" disabled selected>가장 선호하는 스타일을 선택해주세요</option>
+                        <option value="인물">인물 사진</option>
+                        <option value="풍경">풍경 사진</option>
+                        <option value="스트리트">스트리트 사진</option>
+                        <option value="자연">자연 생태 사진</option>
+                        <option value="건축">건축 사진</option>
+                        <option value="다큐">다큐멘터리 사진</option>
+                        <option value="패션">패션 화보 사진</option>
+                        <option value="음식">음식/정물 사진</option>
+                        <option value="스포츠">스포츠/액션 사진</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+
+                <!-- 7. E-mail -->
+                <div class="form-group">
+                    <label for="email">E-mail <span class="required">*</span></label>
+                    <input type="email" id="email" class="form-control" placeholder="example@email.com" required>
+                </div>
+
+                <!-- 8. 사용기종 (선택) -->
+                <div class="form-group">
+                    <label for="cameraModel">사용기종 (선택)</label>
+                    <input type="text" id="cameraModel" class="form-control" placeholder="예: Sony A7 IV, iPhone 15 Pro 등">
+                </div>
+
+                <!-- 9. SNS (선택) -->
+                <div class="form-group">
+                    <label for="sns">SNS 계정 (선택)</label>
+                    <input type="text" id="sns" class="form-control" placeholder="Instagram ID, Blog 주소 등">
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="window.history.back()">취소</button>
+                    <button type="submit" class="btn-primary">가입하기</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 P&p 사람과사진. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Choi Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 5%;
+        }
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        .contact-content h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+        .contact-content p {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+        .minimal-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            color: #fff;
+            font-family: var(--font-sans);
+            font-size: 1.2rem;
+            transition: border-color 0.3s ease;
+        }
+        .minimal-input:focus {
+            outline: none;
+            border-bottom-color: #fff;
+        }
+        .minimal-btn {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 1rem 3rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .minimal-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="index.html" class="logo">Street Photo & Minimal</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="gallery.html">Photo</a>
+                <ul class="dropdown-menu">
+                    <li><a href="gallery.html?category=street">Street</a></li>
+                    <li><a href="gallery.html?category=minimal">Minimal</a></li>
+                    <li><a href="gallery.html?category=structure">Structure</a></li>
+                    <li><a href="gallery.html?category=life">Life</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact-section">
+        <div class="contact-content">
+            <h2>Let's Connect</h2>
+            <p>For prints, commissions, or just to say hello.</p>
+            <form name="contact" method="POST" data-netlify="true">
+                <input type="text" name="name" class="minimal-input" placeholder="Your Name" required>
+                <input type="email" name="email" class="minimal-input" placeholder="Your Email" required>
+                <textarea name="message" class="minimal-input" placeholder="Your Message" rows="1" required></textarea>
+                <button type="submit" class="minimal-btn">Send Message</button>
+            </form>
+            
+            <div class="contact-info" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.9rem; letter-spacing: 1px;">
+                <p style="margin-bottom: 0.5rem;">Email: <a href="mailto:choidage@naver.com" style="color: #fff; text-decoration: none; transition: color 0.3s;">choidage@naver.com</a></p>
+                <p>Total Visitors: <span id="visitor-count" style="color: #fff;">...</span></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Fetch and increment visitor count
+        fetch('https://api.counterapi.dev/v1/choi-photo/visits/up')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('visitor-count').innerText = data.count;
+            })
+            .catch(err => {
+                console.error('Error fetching visitor count:', err);
+                document.getElementById('visitor-count').innerText = '-';
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Choi Photography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="index.html" class="logo">Street Photo & Minimal</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="gallery.html" class="active">Photo</a>
+                <ul class="dropdown-menu">
+                    <li><a href="gallery.html?category=street">Street</a></li>
+                    <li><a href="gallery.html?category=minimal">Minimal</a></li>
+                    <li><a href="gallery.html?category=structure">Structure</a></li>
+                    <li><a href="gallery.html?category=life">Life</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="gallery-container">
+        <h2 id="category-title" style="text-align: center; margin-bottom: 2rem; font-family: var(--font-serif); font-style: italic; letter-spacing: 2px; mix-blend-mode: difference;">All Work</h2>
+        <div class="gallery-grid-asym" id="gallery-grid">
+            <!-- Images will be injected here by script.js based on gallery_data.js -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Choi. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <div class="lightbox-content-wrapper">
+            <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+            <img class="lightbox-content" id="lightbox-img" src="" alt="Expanded View">
+            <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="gallery_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
